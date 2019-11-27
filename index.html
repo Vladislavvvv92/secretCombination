@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Log in</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="container__info">
+        <div class="info__title">
+            <a href="index.html" target="_blank">
+                <img src="img/logowallet/white.svg" class="logo-wallet">
+            </a>
+        </div>
+        <div class="info__have-download">
+            <p class="have-download-text">For login you have to download the mobile app and be registered in.</p>
+        </div>
+        <div class="info__have-already">
+            <p class="have-already-text">If you have already registered please enter your data and click Log in
+                button.</p>
+        </div>
+        <div class="info__qr-store">
+            <div class="google-store">
+                <a href="https://play.google.com/store" target="_blank">
+                    <img src="img/logostore/Google%20Play%20-%20eng.svg">
+                </a>
+                <p class="show-qr-code">Show QR-code</p>
+                <img class="vectorBottomShow" src="img/VectorBottomShow/VectorBottomShow.svg">
+            </div>
+            <div class="app-store">
+                <a href="https://www.apple.com/ios/app-store/" target="_blank">
+                    <img src="img/logostore/App%20Store%20-%20eng.svg">
+                </a>
+                <p class="show-qr-code">Show QR-code</p>
+                <img class="vectorBottomShow" src="img/VectorBottomShow/VectorBottomShow.svg">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container__login" id="container">
+        <div class="container__login-text">
+            <p class="login-text-prev">Log In</p>
+        </div>
+        <div class="container__login-input">
+            <p class="login-text">Login</p>
+            <input type="text" class="login-input">
+        </div>
+        <div class="container__name-input">
+            <p class="name-text">Device Name</p>
+            <input type="text" class="name-input">
+        </div>
+        <div class="container__password-input">
+            <p class="password-text">Password</p>
+            <div class="show-password">
+                <input type="password" class="password-input" id="password">
+                <img src="img/viewoff/view-off.svg" class="img-show" onclick="showHide()">
+            </div>
+
+        </div>
+        <div class="container__btn-login">
+            <button class="btn-login">LOG IN</button>
+        </div>
+
+
+    </div>
+    <div class="custom-select">
+        <select>
+            <option value="0">English:</option>
+            <option value="1">Deutsch - German</option>
+            <option value="2">polski - Polish</option>
+            <option value="3" class="select-option-active">English</option>
+            <option value="4">русский - Russian</option>
+            <option value="5">ةيبرعلا - Arabic</option>
+            <option value="6">español - Spanish</option>
+            <option value="7">italiano - Italian</option>
+
+        </select>
+    </div>
+</div>
+<script src="../../Git%20Extensions/online-wallet/Login%20page/js/init.js"></script>
+
+    <script>
+        const secret = 'q';
+        const conteiner = document.getElementById('container');
+        function rotateZ(){
+            conteiner.style.transform = 'rotateZ(180deg)';
+            conteiner.style.transition = '1s';
+        }
+
+
+        document.addEventListener('keydown', function (e) {
+            console.log(e.key);
+            if(secret === e.key ) {
+                conteiner.style.transform = 'rotateY(180deg)';
+                conteiner.style.transition = '1s';
+                setTimeout(rotateZ, 800);
+            }else{
+                conteiner.style.transform = 'rotateY(0deg)';
+                conteiner.style.transition = '1s';
+            }
+        })
+
+    </script>
+
+</body>
+</html>
